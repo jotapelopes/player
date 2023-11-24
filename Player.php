@@ -53,8 +53,9 @@ class Player
         return array_push($array, $item);
     }
 
-    public function removerItem($item)
+    public function soltarItem($item)
     {
         return array_search($item, $array);;
     }
+
 }
