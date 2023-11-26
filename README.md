@@ -6,6 +6,8 @@
 
 ## Exercício  
 
+<div style="text-align:justify">
+
 O objetivo desse projeto é aplicarmos os conceitos e técnicos da
 Programação Orientada à Objetos no desenvolvimento de software.
 Tendo como base o escopo de um jogo simples, onde cada Player tem
@@ -30,4 +32,10 @@ possa validar todas as operações, pelo menos dois players, dois itens de
 cada categoria, simule um inventário cheio e depois um Player subindo de
 nível
 
+</div>
+
+<div style="text-align:center">
+
 ![image](https://github.com/jotapelopes/player/assets/127902932/b862a08d-a70f-41d9-9a58-2513a434e745)
+
+</div>
