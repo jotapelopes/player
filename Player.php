@@ -1,12 +1,14 @@
 <?php
 
+require_once "Inventario.php";
+
 class Player
 {
     private string $nickname;
     private int $nivel;
-    private $inventario;
+    private Inventario $inventario;
 
-    public function __construct($nickname, $nivel, $inventario)
+    public function __construct($nickname, $nivel, Inventario $inventario)
     {
         $this->nickname = $nickname;
         $this->nivel = $nivel;
@@ -20,7 +22,7 @@ class Player
 
     public function setNickname($nickname)
     {
-        $this->nickname = $nickname; 
+        $this->nickname = $nickname;
     }
 
     public function getNivel()
@@ -30,32 +32,34 @@ class Player
 
     public function setNivel($nivel)
     {
-        $this->nivel = $nivel; 
+        $this->nivel = $nivel;
     }
-    
+
     public function getInventario()
     {
-        return $this->nivel;
+        return $this->inventario;
     }
 
-    public function setInventario($inventario)
+    public function setInventario(Inventario $inventario)
     {
-        $this->inventario = $inventario; 
+        $this->inventario = $inventario;
     }
 
-    public function coletarItem($item)
+    public function coletarItem(Item $item)
     {
-        return array_push($item);
+        $this->inventario->adicionarItem($item);
     }
 
-    public function removerItem($item)
+    public function soltarItem(Item $item)
     {
-        return array_push($array, $item);
+        $this->inventario->removerItem($item);
     }
 
-    public function soltarItem($item)
+    public function subirNivel()
     {
-        return array_search($item, $array);;
+        $this->nivel++;
+        $aumentoCapacidade = $this->nivel * 3;
+        $this->inventario->setCapacidadeMaxima($this->inventario->getCapacidadeMaxima() + $aumentoCapacidade);
     }
-
+    
 }

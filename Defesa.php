@@ -1,11 +1,14 @@
 <?php
 
-class Defesa extends Item {
+require_once "Item.php";
+
+class Defesa extends Item 
+{
     protected $defesa;
 
     public function __construct($name, $tamanho, $classe, $defesa) {
         parent::__construct($name, $tamanho, $classe);
-        $this->defesa = defesa;
+        $this->defesa = $defesa;
     }
 
     public function getDefesa() {

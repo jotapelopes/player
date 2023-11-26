@@ -1,8 +1,9 @@
 <?php
 
-require_once "Item.php"
+require_once "Item.php";
+
+class Magia extends Item 
 {
-class Magia extends Item {
     protected $magia;
 
     public function __construct($name, $tamanho, $classe, $magia) {
@@ -19,6 +20,6 @@ class Magia extends Item {
     }
 }
 
-}
+
 
 ?>

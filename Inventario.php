@@ -3,38 +3,48 @@
 class Inventario
 {
     private int $capacidadeMaxima;
-    private $itens;
+    private array $itens;
 
     public function __construct($capacidadeMaxima)
     {
         $this->capacidadeMaxima = $capacidadeMaxima;
-        $this->itens = array[]; 
+        $this->itens = [];
     }
 
     public function getCapacidadeMaxima()
     {
         return $this->capacidadeMaxima;
     }
-    
+
     public function setCapacidadeMaxima($capacidadeMaxima)
     {
         $this->capacidadeMaxima = $capacidadeMaxima;
     }
 
-    public function adicionarItem($item)
+    public function adicionarItem(Item $item)
     {
-        return array_push($this->itens, $item);
+        if (count($this->itens) < $this->capacidadeMaxima) {
+            $this->itens[] = $item;
+        } else {
+            echo "Inventário cheio, não foi possível adicionar o item!  <br>";
+        }
     }
 
-    public function removerItem($item)
+    public function removerItem(Item $item)
     {
-        return array_search($item, $this->itens);;
+        $index = array_search($item, $this->itens);
+        if ($index !== false) {
+            unset($this->itens[$index]);
+        }
     }
 
-    public function capactidadeLivre()
+    public function capacidadeLivre()
     {
-        $valor = $this->capacidadeMaxima - count($this->itens)
-        return $valor;
+        return $this->capacidadeMaxima - count($this->itens);
+    }
+
+    public function listarItens()
+    {
+        return $this->itens;
     }
 }
-
