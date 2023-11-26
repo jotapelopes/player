@@ -1,4 +1,4 @@
-# player
+# Atividade Jogador, Inventário e Item
 
 ## Alunos: 
 - João Pedro dos Santos Lopes - RA: 1963012
